@@ -1,0 +1,17 @@
+<div class='drop-list-row'>
+  <div class='cart-item'>
+    <div class='cart-item-image'><fa-icon [icon] ="faThLarge"></fa-icon></div>
+    <div class='cart-item-details'>
+      <div class='cart-item-quantity-price'>
+        <span class='cart-item-quantity'>{{item.quantity}} x </span>
+        <span class='cart-item-amount'>Rs. {{item.price}}/-</span>
+      </div>
+      <div class='cart-item-name'>
+        {{item.name}}
+      </div>
+    </div>
+    <div class='cart-item-close'>
+      <fa-icon [icon] ="faTimes" (click)="onRemoveCartItemClick(item.id)"></fa-icon>
+    </div>
+  </div>
+</div>

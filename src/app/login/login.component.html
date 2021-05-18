@@ -1,0 +1,47 @@
+<div class='sub-content'>
+  <div class='login-component'>
+    <div class='login-banner'></div>
+    <div class='login-container'>
+      <div class='padded-container'>
+        <div class='two-panel-container'>
+
+          <div class='panel left-panel'>
+            <div class='panel-title'>NEW CUSTOMERS</div>
+            <div class='panel-description'>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</div>
+            <div><button class='button green' routerLink="/signup"><fa-icon [icon]='faUser'></fa-icon>Create Account</button></div>
+          </div>
+
+          <div class='panel right-panel'>
+            <div class='panel-title'>REGISTERED CUSTOMERS</div>
+            <div class='panel-description'>If you have an account with us, please log in.</div>
+            <div class='login-form'>
+              <div class='login-form-row'>
+                <div class='login-form-row-label'>Email address</div>
+                <div class='login-form-row-action'>
+                  <input class='textbox border' type='text'>
+                </div>
+              </div>
+              <div class='login-form-row'>
+                <div class='login-form-row-label'>Password</div>
+                <div class='login-form-row-action'>
+                  <input class='textbox border' type='password'>
+                </div>
+              </div>
+              <div class='login-form-row'>
+                <div class='login-form-row-label'></div>
+                <div class='login-form-row-action'>
+                  <button class='button gray' routerLink="/"><fa-icon [icon]='faLockOpen'></fa-icon>Login</button>
+                  <span>Forgot Password?</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class='login-app-hightlight'>
+      <app-highlight></app-highlight>
+    </div>
+  </div>
+</div>

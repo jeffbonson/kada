@@ -1,0 +1,94 @@
+.login-component{
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 3fr 1fr;
+
+  .login-banner{
+    padding-bottom: 0px;
+    position: relative;
+    margin-top: 0;
+    background-color: rgba(0, 0, 0, 0);
+    background-repeat: no-repeat;
+    background-image: url(../../assets/images/login/login-banner.jpg);
+    background-size: cover;
+    background-position: left top;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    box-shadow: 2px 2px 2px lightgray;
+    height: 200px;
+  }
+
+  .login-container{
+    display: flex;
+    flex-grow: 1;
+    margin-top: 5px;
+    margin-bottom: 60px;
+
+    .padded-container{
+      width: 1240px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 20px 0 20px 0;
+
+      .two-panel-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        height: calc(100% - 80px);
+
+        .panel{
+          height: 100%;
+          padding: 40px;
+          background: #FFF;
+          box-shadow: 2px 2px 2px lightgray;
+        }
+
+        .left-panel{
+          border-right: 1px solid lightgray;
+
+        }
+
+        .panel-title{
+          text-transform: uppercase;
+          color: #131e2c;
+          font-size: 1rem;
+          margin-bottom: 10px;
+          font-weight:bold;
+        }
+
+        .panel-description{
+          color: #131e2c;
+          font-size: 0.9rem;
+          margin-bottom: 10px;
+        }
+
+        .login-form{
+          margin-top: 55px;
+
+          .login-form-row{
+            margin-top: 20px;
+
+            .login-form-row-label{
+              width: 100%;
+            }
+
+            .login-form-row-action{
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+
+              input{
+                width: calc(100% - 20px);
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+
+}

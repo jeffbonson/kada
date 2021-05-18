@@ -1,0 +1,128 @@
+
+
+.header-container{
+  margin-right: auto;
+  margin-left: auto;
+  background: #FFF;
+  width: 1240px;
+  height:100%;
+  color: #FFF;
+
+  .flash-news{
+    height: 50px;
+    width: 100%;
+    background: var(--flash-news-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+
+  .header-contents{
+    display: grid;
+    grid-template-columns: 0.3fr 1fr 0.12fr 0.12fr 0.12fr;
+    grid-template-rows: 2fr;
+    color: var(--green);
+
+    .logo{
+      font-weight: bold;
+      font-size: 25px;
+
+      > span{
+        cursor: pointer;
+      }
+
+      fa-icon{
+        color: var(--logo-color);
+        cursor: pointer;
+        margin-right: 5px;
+      }
+    }
+
+    .search-text{
+      display: flex;
+      width: 100%;
+
+      input{
+        width: 100%;
+        height: 95%;
+        border: 0;
+        outline: 0;
+      }
+    }
+
+    .menu{
+      display: flex;
+      width: 100%;
+
+      .menu-item{
+        flex-grow: 1;
+        font-weight:bold;
+        //text-transform: uppercase;
+
+        &:hover{
+          color: var(--red);
+          cursor: pointer;
+        }
+      }
+    }
+
+    .header-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 80px;
+      position: relative;
+
+      fa-icon{
+        cursor: pointer;
+        font-size: 1.2rem;
+      }
+      .drop-list-container{
+        display: none;
+        position: absolute;
+        min-width: 200px;
+        background: #FFF;
+        right: -1px;
+        top: 80px;
+        border: 1px solid lightgray;
+        border-top: 3px solid var(--green);
+      }
+    }
+
+    .search{
+
+      &.active{
+        fa-icon{
+          color: var(--red);
+        }
+      }
+      fa-icon{
+        color: gray;
+      }
+    }
+
+    .quick-links:hover{
+      .drop-list-container{
+        display: block;
+      }
+    }
+    .cart {
+      &.hasItems{
+        fa-icon{
+          color: var(--red);
+        }
+      }
+
+      &:hover{
+        .drop-list-container{
+          display: block;
+        }
+    }
+
+    }
+
+
+  }
+
+}

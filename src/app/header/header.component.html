@@ -1,0 +1,52 @@
+<div class='header-container'>
+  <div class='flash-news'>
+    SPECIAL OFFERS! - GET 50% OFF ON VEGETABLES
+  </div>
+  <div class='header-contents'>
+
+    <div class='header-item logo' routerLink="/">
+      <fa-icon [icon]="faShoppingBasket"></fa-icon>
+      <span>Kada</span>
+    </div>
+
+    <div *ngIf="setSearch; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+      <div class='header-item search-text'>
+        <input type='text' placeholder='Search'/>
+      </div>
+    </ng-template>
+    <ng-template #elseBlock>
+      <div class='header-item menu'>
+        <div class='menu-item'>HOME</div>
+        <div class='menu-item' *ngFor="let cat of categories">
+          {{cat.name | uppercase}}
+        </div>
+
+      </div>
+    </ng-template>
+
+
+
+    <div class='header-item search' [ngClass]="{'active': setSearch === true}">
+      <fa-icon [icon]="faSearch" (click)="onSearchClick()"></fa-icon>
+    </div>
+
+    <div class='header-item cart' [ngClass]="{'hasItems': quickCartItems.length > 0}">
+      <fa-icon [icon]="faShoppingBasket"></fa-icon>
+      <div class='drop-list-container'>
+        <app-quick-cart
+          [quickCartItems]="quickCartItems"
+          (onCartItemChange)="updateCartItems($event)"
+        ></app-quick-cart>
+      </div>
+    </div>
+
+    <div class='header-item quick-links'>
+      <fa-icon [icon]="faBars"></fa-icon>
+      <div class='drop-list-container'>
+          <app-quick-link></app-quick-link>
+      </div>
+    </div>
+
+  </div>
+</div>

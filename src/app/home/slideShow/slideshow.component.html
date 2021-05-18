@@ -1,0 +1,9 @@
+<div class='slide-show-elevated-container'>
+    <div class='slide-show-padded-container'>
+      <div *ngFor="let n of getTopItems();" class='slide-item'>
+        <div class='slide-item-image'><fa-icon [icon]="faThLarge"></fa-icon></div>
+        <div class='slide-item-name'>{{n.name}}</div>
+      </div>
+
+    </div>
+</div>

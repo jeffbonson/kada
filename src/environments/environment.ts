@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyCC27rdTLlRIxmyWq6ViI_rHCwq54G_NPw",
+    authDomain: "kada-6e264.firebaseapp.com",
+    databaseURL: "https://kada-6e264-default-rtdb.firebaseio.com",
+    projectId: "kada-6e264",
+    storageBucket: "kada-6e264.appspot.com",
+    messagingSenderId: "1069863296331",
+    appId: "1:1069863296331:web:08820d458cb42dec231cce",
+    measurementId: "G-L2MEK26JCG"
+  }
 };
 
 /*

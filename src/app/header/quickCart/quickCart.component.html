@@ -1,0 +1,9 @@
+<div class='drop-list-wrapper'>
+  <div class='drop-list-header'>{{this.quickCartItems.length}} Item(s) {{this.calculateTotalPrice()}}</div>
+  <div class='drop-list-body' *ngFor="let item of this.quickCartItems; let i = index">
+      <app-quick-cart-item
+        [item]="item"
+        (onRemoveCartItemCallBack)="removeCartItem($event)">
+      </app-quick-cart-item>
+  </div>
+</div>
