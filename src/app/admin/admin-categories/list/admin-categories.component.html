@@ -1,0 +1,16 @@
+
+<div class='admin-category-component'>
+
+
+
+  <div class='list'>
+    <div *ngFor="let cat of categories;" class='list-row'>
+      <app-admin-category-item [category]="cat"></app-admin-category-item>
+    </div>
+  </div>
+
+
+  <button class='button primary' (click)="openDialog()">Create</button>
+
+
+</div>

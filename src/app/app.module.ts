@@ -20,8 +20,9 @@ import { BestsellerComponent } from './home/bestSeller/bestseller.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { AppRoutingModule } from './app-routing.module';
-import { OrdersService } from './shared/orders.service';
-
+import { AdminModule } from './admin/admin.module';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -41,12 +42,15 @@ import { OrdersService } from './shared/orders.service';
   imports: [
     BrowserModule,
     FontAwesomeModule,
+    AdminModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    FormsModule,
+    BrowserAnimationsModule
   ],
-  providers: [OrdersService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

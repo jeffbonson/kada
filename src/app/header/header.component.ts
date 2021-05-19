@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DocumentChangeAction } from '@angular/fire/firestore';
 import { faShoppingBasket, faBars, faSearch, faThLarge, faTimes} from '@fortawesome/free-solid-svg-icons';
 import { IQuickCartItem } from 'src/interface/IQuickCartItem';
-import { OrdersService } from '../shared/orders.service';
+import { CategoryService } from '../shared/categories.service';
 
 @Component({
   selector: 'app-header',
@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
   quickCartItems: IQuickCartItem[] = [];
   categories = [];
 
-  constructor(private ordersService: OrdersService) { }
+  constructor(private categoryService: CategoryService) { }
 
 
   setSearch: boolean = false;
@@ -29,7 +29,7 @@ export class HeaderComponent implements OnInit {
   }
 
   getCategories(){
-    this.ordersService.getCategories().subscribe((res: DocumentChangeAction<{name: string, active: boolean}>[])  => {
+    this.categoryService.getCategories().subscribe((res: DocumentChangeAction<{name: string, active: boolean}>[])  => {
       this.categories = res.map((category)=> category.payload.doc.data());
     });
   }

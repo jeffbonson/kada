@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'login', component: LoginComponent},
   { path: 'signup', component: SignupComponent},
+  { path: '**', redirectTo: '/' }
 ]
 
 @NgModule({
@@ -15,3 +16,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule{}
+
