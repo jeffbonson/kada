@@ -25,12 +25,14 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.quickCartItems  = this.getQuickCartItems();
-    this.getCategories();
+    this.getHeaderCategories();
   }
 
-  getCategories(){
-    this.categoryService.getCategories().subscribe((res: DocumentChangeAction<{name: string, active: boolean}>[])  => {
-      this.categories = res.map((category)=> category.payload.doc.data());
+  getHeaderCategories(){
+    this.categoryService.getHeaderCategories().subscribe((res: DocumentChangeAction<{key: string, name: string, showInHeader: boolean}>[])  => {
+      this.categories = res.map((category)=> category.payload.doc.data()
+
+        );
     });
   }
 

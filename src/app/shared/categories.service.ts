@@ -14,6 +14,10 @@ export class CategoryService {
     return this.firestore.collection("categories", ref => ref.orderBy('name')).snapshotChanges();
   }
 
+  getHeaderCategories() {
+    return this.firestore.collection("categories", ref => ref.where('showInHeader', '==', true).orderBy('name')).snapshotChanges();
+  }
+
   createCategory(category: Category): void {
     this.firestore.collection("categories").add({...category});
   }
@@ -35,6 +39,13 @@ export class CategoryService {
       error => {
         console.log('Error: ', error);
       });
+  }
+
+  toggleInHeader(category: Category){
+    this.firestore
+       .collection("categories")
+       .doc(category.key)
+       .update({...category, showInHeader: !category.showInHeader });
   }
 
 }

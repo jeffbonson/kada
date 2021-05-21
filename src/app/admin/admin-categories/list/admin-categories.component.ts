@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DocumentChangeAction } from '@angular/fire/firestore';
 import { CategoryService } from 'src/app/shared/categories.service';
 import {MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { DialogComponent } from 'src/app/dialog/dialog.component';
 import { AdminCategoriesNewComponent } from '../new/new-admin-category.component';
+import { faPlus} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-admin-categories',
@@ -14,6 +14,7 @@ export class AdminCategoriesComponent implements OnInit {
 
   constructor(private categoryService: CategoryService, private matDialog: MatDialog) { }
   categories = [];
+  faPlus = faPlus;
 
   ngOnInit(): void {
     this.getCategories();
@@ -21,7 +22,8 @@ export class AdminCategoriesComponent implements OnInit {
 
   getCategories(){
     this.categoryService.getCategories().subscribe((res: DocumentChangeAction<{name: string, active: boolean}>[])  => {
-      this.categories = res.map((category)=> category.payload.doc.data());
+      this.categories = res.map(c =>
+        ({ key: c.payload.doc.id, ...c.payload.doc.data() }));
     });
   }
 

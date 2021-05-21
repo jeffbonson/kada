@@ -1,10 +1,26 @@
- <div class='new-admin-component'>
+ <div class='new-admin-category'>
    <form (ngSubmit)="onSubmit()">
-    <div class='row'>
-      <input type="text" class="textbox border" id="name" required name="name" [(ngModel)]="category.name">
+    <div class='row' *ngIf="validation.valid === false && formChange ">
+      <div class='label'>
+        <span class='error'>{{validation.message}}</span>
+      </div>
     </div>
     <div class='row'>
-      <button type="submit" class='button primary'>Create</button>
+      <div class='label'>
+        <span class='label-title'>Category name </span>
+        </div>
+      <div class='text-container'>
+        <input type="text" class="textbox border" id="name" required name="name"
+        (keyup)="onKeyUpEvent($event)"
+        >
+      </div>
+    </div>
+    <div class='row'>
+      <button type="submit"
+        [ngClass]="{'button': true, 'green' : validation.valid }"
+        [disabled]="validation.valid === false ">
+        Create
+      </button>
     </div>
   </form>
 </div>

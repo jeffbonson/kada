@@ -19,13 +19,13 @@ export class AdminCategoriesNewComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   category: Category = new Category
-  submitted = false;
+  validation: {message:string, valid: boolean} = {message:'', valid: false};
+  formChange = false;
 
   ngOnInit(): void {
   }
 
   newCategory(): void {
-    this.submitted = false;
     this.category = new Category();
   }
 
@@ -37,13 +37,23 @@ export class AdminCategoriesNewComponent implements OnInit {
   }
 
   onSubmit(){
-    this.submitted = true;
     this.save();
   }
 
   close() {
     this.dialogRef.close();
 
+  }
+
+  onKeyUpEvent(event: any){
+    const name = event.target.value;
+    this.formChange = true;
+    if(name.length <= 0){
+      this.validation = {message: 'Please enter a name', valid: false}
+    }else{
+      this.validation = {message: '', valid: true}
+      this.category.name = name;
+    }
   }
 
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Category } from 'src/app/models/category';
+import { faEdit, faEye, faEyeSlash} from '@fortawesome/free-solid-svg-icons';
+import { CategoryService } from 'src/app/shared/categories.service';
 
 
 @Component({
@@ -10,11 +12,19 @@ import { Category } from 'src/app/models/category';
 export class AdminCategoryItemComponent implements OnInit {
 
   @Input() category: Category;
-
-  constructor() { }
+  faEdit = faEdit;
+  faEye = faEye;
+  faEyeSlash = faEyeSlash;
+  constructor(private categoryService: CategoryService) { }
   categories = [];
 
+
   ngOnInit(): void {
+  }
+
+  inHeaderToggle(category :Category){
+    console.log(category)
+    this.categoryService.toggleInHeader(category)
   }
 
 

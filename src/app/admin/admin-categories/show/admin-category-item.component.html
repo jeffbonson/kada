@@ -1,3 +1,14 @@
-<div>
-  {{category.name}}
+<div class='admin-category-card-component'>
+  <div class='admin-category-in-header'
+    (click)=inHeaderToggle(category)
+    [ngClass]="(category.showInHeader)?'active':'inActive'">
+    <fa-icon [icon]="(category.showInHeader)? faEye: faEyeSlash"></fa-icon> In Header
+  </div>
+  <div class='admin-category-image'></div>
+  <div class='admin-category-name'>
+    <div class='title'>{{category.name}}</div>
+    <div class='rating'>
+
+    </div>
+  </div>
 </div>

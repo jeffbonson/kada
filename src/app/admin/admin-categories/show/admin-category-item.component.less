@@ -1,0 +1,47 @@
+
+.admin-category-card-component {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  height: 290px;
+  overflow: hidden;
+  font-family: sans-serif;
+
+
+  .admin-category-in-header{
+    position: absolute;
+    height: 20px;
+    padding: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+
+    &.inActive{
+      background: var(--red);
+    }
+
+    &.active{
+      background: lightgreen;
+    }
+  }
+
+  .admin-category-image{
+    width: 100%;
+    height: calc(100% - 50px);
+
+  }
+
+  .admin-category-name{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .title{font-size: 20px;}
+    .rating{
+      font-size: 0.8em;
+    }
+  }
+  }
